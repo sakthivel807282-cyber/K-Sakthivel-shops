@@ -3,71 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>K. Sakthivel Shops</title>
+<title>K. Sakthivel Shops - Manamadurai</title>
 <style>
 body{margin:0;font-family:sans-serif;background:#fff9f5}
-header{padding:15px;background:white;display:flex;justify-content:space-between;font-weight:bold;box-shadow:0 2px 5px #ddd}
+header{padding:15px;background:white;display:flex;justify-content:space-between;font-weight:bold;box-shadow:0 2px 5px #ddd;position:sticky;top:0;z-index:10}
 .hero{text-align:center;padding:40px 20px;background:linear-gradient(#ffe8d6,#fff9f5)}
-.btn{background:#ff6b35;color:white;padding:12px 25px;border-radius:25px;text-decoration:none;display:inline-block;margin:10px}
+.btn{background:#ff6b35;color:white;padding:12px 25px;border-radius:25px;text-decoration:none;display:inline-block;margin-top:10px;font-weight:bold;border:none}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:20px}
-.card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 3px 10px #eee}
+.card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 3px 10px #eee;cursor:pointer}
 .card img{width:100%;height:130px;object-fit:cover}
-.info{padding:10px}
-.box{margin:15px;padding:20px;background:white;border-radius:12px;text-align:center}
+.info{padding:10px;text-align:center;font-size:14px}
+.box{margin:15px;padding:20px;background:white;border-radius:12px;text-align:center;box-shadow:0 2px 8px #eee}
+#cart{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#222;color:white;padding:12px 20px;border-radius:30px;display:none;z-index:100;cursor:pointer}
 </style>
 </head>
 <body>
 <header>
-<div>K. SAKTHIVEL SHOPS<br><small>Palladam</small></div>
-<div>Bag <span id="c">0</span></div>
+<div>K. SAKTHIVEL SHOPS<br><small>Manamadurai</small></div>
+<div>Bag <span id="c">0</span> 🛒</div>
 </header>
-
 <div class="hero">
-<h1>K. SAKTHIVEL SHOPS</h1>
-<h3>Where every crumb tells a story</h3>
-<p>Freshly baked everyday<br>Owner: K. Sakthivel | Palladam Since 2024</p>
-<a class="btn" href="#cakes">See Cakes</a>
-</div>
-
-<div class="grid" id="cakes">
-<div class="card" onclick="add('Chocolate Truffle Rs650')">
-<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400">
-<div class="info"><b>Chocolate Truffle</b><br>Rs.650</div>
-</div>
-<div class="card" onclick="add('Strawberry Dream Rs700')">
-<img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400">
-<div class="info"><b>Strawberry Dream</b><br>Rs.700</div>
-</div>
-<div class="card" onclick="add('Red Velvet Rs750')">
-<img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400">
-<div class="info"><b>Red Velvet Joy</b><br>Rs.750</div>
-</div>
-<div class="card" onclick="add('Cupcake Box Rs350')">
-<img src="https://images.unsplash.com/photo-1488477181946-64290103bbd6?w=400">
-<div class="info"><b>Cupcake Box 6pcs</b><br>Rs.350</div>
-</div>
-</div>
-
-<div class="box">
-<h3>Your Bag</h3>
-<p id="msg">Click cake to add!</p>
-<a class="btn" id="wa" href="https://wa.me/918072823987">Order WhatsApp</a>
-</div>
-
-<div class="box" style="background:#3d2b1f;color:white">
-<h3>K. SAKTHIVEL SHOPS</h3>
-<p>Project by Sridevika<br>For K. Sakthivel, Palladam<br>College Project 2026</p>
-</div>
-
-<script>
-let n=0, items=[];
-function add(name){
-n++; items.push(name);
-document.getElementById('c').innerText=n;
-document.getElementById('msg').innerText=items.join(', ');
-let t="Hi K Sakthivel Shops! Order: "+items.join(', ');
-document.getElementById('wa').href="https://wa.me/918072823987?text="+encodeURIComponent(t);
-}
-</script>
-</body>
-</html>
+<h1>K. SAKTHIVEL SHOPS
