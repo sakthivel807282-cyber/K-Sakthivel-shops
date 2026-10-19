@@ -8,7 +8,7 @@
 body{margin:0;font-family:sans-serif;background:#fff9f5}
 header{padding:15px;background:white;display:flex;justify-content:space-between;font-weight:bold;box-shadow:0 2px 5px #ddd;position:sticky;top:0;z-index:10}
 .hero{text-align:center;padding:40px 20px;background:linear-gradient(#ffe8d6,#fff9f5)}
-.btn{background:#ff6b35;color:white;padding:12px 25px;border-radius:25px;text-decoration:none;display:inline-block;margin-top:10px;font-weight:bold;border:none}
+.btn{background:#ff6b35;color:white;padding:12px 25px;border-radius:25px;text-decoration:none;display:inline-block;margin-top:10px;font-weight:bold;border:none;cursor:pointer}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:20px}
 .card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 3px 10px #eee;cursor:pointer}
 .card img{width:100%;height:130px;object-fit:cover}
@@ -23,4 +23,27 @@ header{padding:15px;background:white;display:flex;justify-content:space-between;
 <div>Bag <span id="c">0</span> 🛒</div>
 </header>
 <div class="hero">
-<h1>K. SAKTHIVEL SHOPS
+<h1>K. SAKTHIVEL SHOPS</h1>
+<h3>Where every crumb tells a story</h3>
+<p>Freshly baked everyday<br>Owner: K. Sakthivel<br>Manamadurai, Sivagangai District</p>
+<a class="btn" href="#cakes">See Cakes 🎂</a>
+</div>
+<div class="grid" id="cakes">
+<div class="card" onclick="add('Chocolate Truffle Rs.650')"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400"><div class="info"><b>Chocolate Truffle</b><br>Rs.650</div></div>
+<div class="card" onclick="add('Strawberry Dream Rs.700')"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400"><div class="info"><b>Strawberry Dream</b><br>Rs.700</div></div>
+<div class="card" onclick="add('Red Velvet Joy Rs.750')"><img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400"><div class="info"><b>Red Velvet Joy</b><br>Rs.750</div></div>
+<div class="card" onclick="add('Cupcake Box 6pcs Rs.350')"><img src="https://images.unsplash.com/photo-1488477181946-64290103bd6d?w=400"><div class="info"><b>Cupcake Box 6pcs</b><br>Rs.350</div></div>
+</div>
+<div class="box">
+<h3>📍 Our Shop Location</h3>
+<p>K. Sakthivel Shops,<br>Manamadurai, Sivagangai District - 630606<br>Tamil Nadu<br>Open: 9AM - 9PM Daily<br><b>Call: 8072823987</b></p>
+<button class="btn" onclick="order()">Order on WhatsApp</button>
+</div>
+<div id="cart" onclick="order()"></div>
+<script>
+let items=[]; let count=0;
+function add(name){items.push(name);count++;document.getElementById('c').innerText=count;let cart=document.getElementById('cart');cart.style.display='block';cart.innerText=count+' items - Tap to Order';}
+function order(){if(items.length==0){alert('First add cakes da! Cake ah click pannu!');return;}let msg="Vanakkam Sakthivel Anna! 🙏\n\nManamadurai Bakery order:\n\n"+items.join('\n')+"\n\nAddress: Manamadurai, Sivagangai Dt\nPlease confirm da!";window.open('https://wa.me/918072823987?text='+encodeURIComponent(msg),'_blank');}
+</script>
+</body>
+</html>
